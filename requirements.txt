@@ -1,0 +1,6 @@
+discord.py
+requests
+random
+aiohttp
+websockets
+chardet
