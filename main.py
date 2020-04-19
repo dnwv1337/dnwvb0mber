@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import requests
 import random
+import os
 
 bot = discord.Client()
 
