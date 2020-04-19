@@ -3,12 +3,7 @@ from discord.ext import commands
 import requests
 import random
 
-
-TOKEN = 'Njk0ODg5NzgzODgwNzEyMjUz.XoSNDw.M-9X8Pwf4U4Apr10BwXvYL5r_0c'
 bot = discord.Client()
-
-
-
 
 @bot.event
 async def on_message(message):
@@ -21,7 +16,7 @@ async def on_message(message):
 		phone = message.content[8:19]
 		global iteration
 		iteration = int(message.content[20:])
-		await channel.send('Пизда чьему то телефону лол')
+		await channel.send('Начинаем атаку')
 		_name = ''
 		_email = _name+f'{iteration}'+'@gmail.com'
 		email = _name+f'{iteration}'+'@gmail.com'
@@ -29,11 +24,6 @@ async def on_message(message):
 		password = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
 		username = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
 		phone9 = phone[1:]
-		phoneAresBank = '+'+phone[0]+'('+phone[1:4]+')'+phone[4:7]+'-' + phone[7:9]+'-'+ phone[9:11]
-		_phone9dostavista = phone9[:3]+'+'+phone9[3:6]+'-'+phone9[6:8]+'-'+phone9[8:10]
-		_phoneOstin = '+'+phone[0]+'+('+phone[1:4]+')'+phone[4:7]+'-'+phone[7:9]+'-'+phone[9:11]
-		_phonePizzahut = '+'+phone[0]+' ('+phone[1:4]+') '+phone[4:7]+' '+phone[7:9]+' '+phone[9:11]
-		_phoneGorzdrav = phone[1:4]+') '+phone[4:7]+'-'+phone[7:9]+'-'+phone[9:11]
 		i = 0
 
 		while i < iteration:
@@ -338,5 +328,6 @@ async def on_message(message):
 		channel = message.channel
 		await channel.send('Выполнение закончится на этом круге')
 		iteration = 0
-
-bot.run(TOKEN)
+		
+token = os.environ.get('TOKEN')
+bot.run(token)
