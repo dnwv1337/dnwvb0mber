@@ -6,11 +6,18 @@ import os
 
 bot = discord.Client()
 
+@bot.command(pass_context = True)
+@commands.has_permissions(administrator = True)
+async def ban(ctx, member : discord.Member, *, reason = None):
+    await member.ban(reason = reason)
+	
 @bot.event
 async def on_message(message):
 	
 	if message.content.startswith('https://discord.gg'):
 		await message.delete()
+		
+		await message.author.ban()
 			
 	if message.content.startswith('$help'):
 		channel = message.channel
@@ -333,6 +340,8 @@ async def on_message(message):
 		channel = message.channel
 		await channel.send('Выполнение закончится на этом круге')
 		iteration = 0
+		
+	await bot.process_commands(message)
 		
 token = os.environ.get('TOKEN')
 bot.run(token)
