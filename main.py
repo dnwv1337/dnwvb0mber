@@ -8,6 +8,10 @@ bot = discord.Client()
 
 @bot.event
 async def on_message(message):
+	
+	if message.content.startswith('https://discord.gg'):
+		await message.delete()
+			
 	if message.content.startswith('$help'):
 		channel = message.channel
 		await channel.send('Читайте закрепленное сообщение')
