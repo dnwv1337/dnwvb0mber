@@ -4,7 +4,7 @@ import requests
 import random
 import os
 
-bot = command.Bot(command_prefix = "$")
+bot = commands.Bot(command_prefix = "$")
 
 @bot.command(pass_context = True)
 @commands.has_permissions(administrator = True)
