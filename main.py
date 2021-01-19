@@ -14,7 +14,7 @@ async def ban(ctx, member : discord.Member, *, reason = None):
 @bot.event
 async def on_message(message):
 	
-	if message.content.startswith('https://discord.gg'):
+	if 'https://discord.gg' in message.content:
 		await message.delete()
 		
 		await message.author.ban()
