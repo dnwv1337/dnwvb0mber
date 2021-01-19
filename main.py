@@ -6,6 +6,11 @@ import os
 
 bot = commands.Bot(command_prefix = "$")
 
+@bot.command()
+async def avatar(ctx, *, avmember : discord.Member=None):
+	ava = avamember.avatar_url
+	await ctx.send(ava)
+
 @bot.command(pass_context = True)
 @commands.has_permissions(administrator = True)
 async def ban(ctx, member : discord.Member, *, reason = None):
