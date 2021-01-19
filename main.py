@@ -7,7 +7,7 @@ import os
 bot = commands.Bot(command_prefix = "$")
 
 @bot.command()
-async def avatar(ctx, *, avmember : discord.Member=None):
+async def avatar(ctx, *, avamember : discord.Member=None):
 	ava = avamember.avatar_url
 	await ctx.send(ava)
 
