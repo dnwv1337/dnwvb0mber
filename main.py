@@ -23,7 +23,7 @@ async def on_message(message):
 	author = message.author
 	id = message.author.id
 	
-	if id == '423137559204331532' :
+	if id == 795211343321497630 :
 		await channel.send('ДЕНИС КРИТ ИДИ НАХУЙ ХУИЛКО)))')
 	
 	if 'https://discord.gg' in message.content:
