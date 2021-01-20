@@ -19,17 +19,22 @@ async def ban(ctx, member : discord.Member, *, reason = None):
 @bot.event
 async def on_message(message):
 	
+	channel = message.channel
+	author = message.author
+	id = message.author.id
+	
+	if id == '423137559204331532' :
+		await channel.send('ДЕНИС КРИТ ИДИ НАХУЙ ХУИЛКО)))')
+	
 	if 'https://discord.gg' in message.content:
 		await message.delete()
 		
 		await message.author.ban()
 			
 	if message.content.startswith('$help'):
-		channel = message.channel
 		await channel.send('Читайте закрепленное сообщение')
 	
 	if message.content.startswith('$bomber_79'):
-		channel = message.channel
 		phone = message.content[8:19]
 		global iteration
 		iteration = int(message.content[20:])
